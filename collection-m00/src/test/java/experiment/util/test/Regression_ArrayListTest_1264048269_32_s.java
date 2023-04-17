@@ -1,0 +1,760 @@
+package experiment.util.test;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class Regression_ArrayListTest_1264048269_32_s {
+
+    public static boolean debug = false;
+
+    @Before
+    public void setup() {
+        // Note: code added via randoop --junit-before-each option (has to be java 8 compatible)
+        System.setProperty("testId", java.time.Instant.now().toEpochMilli() + "#" + java.util.UUID.randomUUID().toString());
+    }
+
+    @After
+    public void teardown() {
+        // Note: code added via randoop --junit-after-each option (has to be java 8 compatible)
+        Class<?> testClass = this.getClass();
+        String testClassName = testClass.getName();
+        String testPackageName = testClass.getPackage().getName();
+        int startIndex = testClassName.indexOf("_") + 1;
+        int endIndex = testClassName.indexOf("Test");
+        String sutClassName = testClassName.substring(startIndex, endIndex);
+        startIndex = 0;
+        endIndex = testPackageName.indexOf(".test");
+        String testDriverPackageName = testPackageName.substring(startIndex, endIndex);
+        String testDriverClassName = testDriverPackageName + "." + sutClassName + "TestDriver";
+        try {
+            Class<?> clazz = Class.forName(testDriverClassName);
+            java.lang.reflect.Method method = clazz.getMethod("matchInternalStateSnapshot");
+            boolean result = ((Boolean) method.invoke(null)).booleanValue();
+            org.junit.Assert.assertTrue(result);
+        } catch (IllegalAccessException | IllegalArgumentException | java.lang.reflect.InvocationTargetException | ClassNotFoundException | NoSuchMethodException | SecurityException e) {
+            e.printStackTrace();
+            org.junit.Assert.fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void test001() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test001");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj3 = arrayListTestDriver0.set((int) (byte) 100, (java.lang.Object) 10.0f);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 100; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+    }
+
+    @Test
+    public void test002() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test002");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj3 = arrayListTestDriver0.get(1);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 1; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+    }
+
+    @Test
+    public void test003() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test003");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean2 = arrayListTestDriver0.equals_CUT((java.lang.Object) 0.0f);
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj5 = arrayListTestDriver0.set((int) 'a', (java.lang.Object) (short) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 97; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test004() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test004");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean1 = arrayListTestDriver0.isEmpty();
+        // The following exception was thrown during execution in test generation
+        try {
+            experiment.util.ListIterator listIterator3 = arrayListTestDriver0.listIterator(100);
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean1 + "' != '" + true + "'", boolean1 == true);
+    }
+
+    @Test
+    public void test005() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test005");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        // The following exception was thrown during execution in test generation
+        try {
+            experiment.util.ListIterator listIterator5 = arrayListTestDriver0.listIterator((int) (byte) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+    }
+
+    @Test
+    public void test006() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test006");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        boolean boolean3 = arrayListTestDriver0.equals_CUT((java.lang.Object) (byte) 1);
+        // The following exception was thrown during execution in test generation
+        try {
+            experiment.util.ListIterator listIterator5 = arrayListTestDriver0.listIterator((int) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + false + "'", boolean3 == false);
+    }
+
+    @Test
+    public void test007() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test007");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean1 = arrayListTestDriver0.isEmpty();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj3 = arrayListTestDriver0.get(10);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 10; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean1 + "' != '" + true + "'", boolean1 == true);
+    }
+
+    @Test
+    public void test008() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test008");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean2 = arrayListTestDriver0.equals_CUT((java.lang.Object) 0.0f);
+        boolean boolean4 = arrayListTestDriver0.add((java.lang.Object) 0L);
+        experiment.util.ArrayListTestDriver arrayListTestDriver6 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver6.clear();
+        java.lang.Object[] objArray8 = arrayListTestDriver6.toArray();
+        boolean boolean9 = arrayListTestDriver6.isEmpty();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj10 = arrayListTestDriver0.set(10, (java.lang.Object) arrayListTestDriver6);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 10; size 1");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + true + "'", boolean4 == true);
+        org.junit.Assert.assertNotNull(objArray8);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray8), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray8), "[]");
+        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + true + "'", boolean9 == true);
+    }
+
+    @Test
+    public void test009() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test009");
+        experiment.util.Collection collection0 = null;
+        // The following exception was thrown during execution in test generation
+        try {
+            experiment.util.ArrayListTestDriver arrayListTestDriver1 = new experiment.util.ArrayListTestDriver(collection0);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+        // Expected exception.
+        }
+    }
+
+    @Test
+    public void test010() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test010");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean2 = arrayListTestDriver0.equals_CUT((java.lang.Object) 0.0f);
+        boolean boolean4 = arrayListTestDriver0.add((java.lang.Object) 0L);
+        java.lang.Class<?> wildcardClass5 = arrayListTestDriver0.getClass();
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + true + "'", boolean4 == true);
+        org.junit.Assert.assertNotNull(wildcardClass5);
+    }
+
+    @Test
+    public void test011() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test011");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj2 = arrayListTestDriver0.get((int) (short) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 0; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+    }
+
+    @Test
+    public void test012() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test012");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean2 = arrayListTestDriver0.equals_CUT((java.lang.Object) 0.0f);
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj5 = arrayListTestDriver0.set((int) ' ', (java.lang.Object) 0.0d);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 32; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test013() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test013");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj3 = arrayListTestDriver0.remove(1);
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+    }
+
+    @Test
+    public void test014() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test014");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray4 = arrayListTestDriver0.toArray();
+        boolean boolean6 = arrayListTestDriver0.add((java.lang.Object) ' ');
+        arrayListTestDriver0.clear();
+        arrayListTestDriver0.clear();
+        experiment.util.Iterator iterator9 = arrayListTestDriver0.iterator();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj12 = arrayListTestDriver0.set(10, (java.lang.Object) 1L);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 10; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+        org.junit.Assert.assertNotNull(objArray4);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray4), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray4), "[]");
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
+        org.junit.Assert.assertNotNull(iterator9);
+    }
+
+    @Test
+    public void test015() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test015");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray4 = arrayListTestDriver0.toArray();
+        boolean boolean6 = arrayListTestDriver0.add((java.lang.Object) ' ');
+        arrayListTestDriver0.clear();
+        arrayListTestDriver0.clear();
+        experiment.util.Iterator iterator9 = arrayListTestDriver0.iterator();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj11 = arrayListTestDriver0.get((int) (short) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 1; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+        org.junit.Assert.assertNotNull(objArray4);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray4), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray4), "[]");
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
+        org.junit.Assert.assertNotNull(iterator9);
+    }
+
+    @Test
+    public void test016() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test016");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray4 = arrayListTestDriver0.toArray();
+        boolean boolean6 = arrayListTestDriver0.add((java.lang.Object) ' ');
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj9 = arrayListTestDriver0.set(100, (java.lang.Object) (short) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 100; size 1");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+        org.junit.Assert.assertNotNull(objArray4);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray4), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray4), "[]");
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
+    }
+
+    @Test
+    public void test017() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test017");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj5 = arrayListTestDriver0.remove(10);
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+    }
+
+    @Test
+    public void test018() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test018");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray4 = arrayListTestDriver0.toArray();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj6 = arrayListTestDriver0.remove((int) '4');
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+        org.junit.Assert.assertNotNull(objArray4);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray4), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray4), "[]");
+    }
+
+    @Test
+    public void test019() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test019");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean4 = arrayListTestDriver0.contains((java.lang.Object) (-1));
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj6 = arrayListTestDriver0.get((-1));
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index -1; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + false + "'", boolean4 == false);
+    }
+
+    @Test
+    public void test020() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test020");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        int int2 = arrayListTestDriver0.size();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj4 = arrayListTestDriver0.remove((int) (short) 0);
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + int2 + "' != '" + 0 + "'", int2 == 0);
+    }
+
+    @Test
+    public void test021() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test021");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean4 = arrayListTestDriver0.contains((java.lang.Object) (-1));
+        boolean boolean6 = arrayListTestDriver0.remove((java.lang.Object) 1.0d);
+        java.lang.Class<?> wildcardClass7 = arrayListTestDriver0.getClass();
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + false + "'", boolean4 == false);
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + false + "'", boolean6 == false);
+        org.junit.Assert.assertNotNull(wildcardClass7);
+    }
+
+    @Test
+    public void test022() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test022");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray4 = arrayListTestDriver0.toArray();
+        boolean boolean6 = arrayListTestDriver0.add((java.lang.Object) ' ');
+        arrayListTestDriver0.clear();
+        arrayListTestDriver0.clear();
+        java.lang.Class<?> wildcardClass9 = arrayListTestDriver0.getClass();
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+        org.junit.Assert.assertNotNull(objArray4);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray4), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray4), "[]");
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
+        org.junit.Assert.assertNotNull(wildcardClass9);
+    }
+
+    @Test
+    public void test023() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test023");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray4 = arrayListTestDriver0.toArray();
+        boolean boolean6 = arrayListTestDriver0.add((java.lang.Object) ' ');
+        arrayListTestDriver0.clear();
+        arrayListTestDriver0.clear();
+        // The following exception was thrown during execution in test generation
+        try {
+            experiment.util.ListIterator listIterator10 = arrayListTestDriver0.listIterator((int) (byte) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+        org.junit.Assert.assertNotNull(objArray4);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray4), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray4), "[]");
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
+    }
+
+    @Test
+    public void test024() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test024");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        boolean boolean3 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray4 = arrayListTestDriver0.toArray();
+        boolean boolean6 = arrayListTestDriver0.add((java.lang.Object) ' ');
+        int int7 = arrayListTestDriver0.size();
+        experiment.util.ArrayListTestDriver arrayListTestDriver9 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver9.clear();
+        java.lang.Object[] objArray11 = arrayListTestDriver9.toArray();
+        boolean boolean12 = arrayListTestDriver9.isEmpty();
+        java.lang.Object[] objArray13 = arrayListTestDriver9.toArray();
+        java.lang.Object[] objArray14 = arrayListTestDriver9.toArray();
+        experiment.util.ArrayListTestDriver arrayListTestDriver15 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver15.clear();
+        java.lang.Object[] objArray17 = arrayListTestDriver15.toArray();
+        boolean boolean18 = arrayListTestDriver15.isEmpty();
+        java.lang.Object[] objArray19 = arrayListTestDriver15.toArray();
+        boolean boolean21 = arrayListTestDriver15.add((java.lang.Object) ' ');
+        arrayListTestDriver15.clear();
+        boolean boolean23 = arrayListTestDriver9.remove((java.lang.Object) arrayListTestDriver15);
+        java.lang.Object[] objArray24 = arrayListTestDriver15.toArray();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj25 = arrayListTestDriver0.set((int) (byte) 100, (java.lang.Object) arrayListTestDriver15);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 100; size 1");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + true + "'", boolean3 == true);
+        org.junit.Assert.assertNotNull(objArray4);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray4), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray4), "[]");
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
+        org.junit.Assert.assertTrue("'" + int7 + "' != '" + 1 + "'", int7 == 1);
+        org.junit.Assert.assertNotNull(objArray11);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray11), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray11), "[]");
+        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + true + "'", boolean12 == true);
+        org.junit.Assert.assertNotNull(objArray13);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray13), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray13), "[]");
+        org.junit.Assert.assertNotNull(objArray14);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray14), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray14), "[]");
+        org.junit.Assert.assertNotNull(objArray17);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray17), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray17), "[]");
+        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + true + "'", boolean18 == true);
+        org.junit.Assert.assertNotNull(objArray19);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray19), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray19), "[]");
+        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + true + "'", boolean21 == true);
+        org.junit.Assert.assertTrue("'" + boolean23 + "' != '" + false + "'", boolean23 == false);
+        org.junit.Assert.assertNotNull(objArray24);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray24), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray24), "[]");
+    }
+
+    @Test
+    public void test025() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test025");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        arrayListTestDriver0.clear();
+        java.lang.Class<?> wildcardClass4 = arrayListTestDriver0.getClass();
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertNotNull(wildcardClass4);
+    }
+
+    @Test
+    public void test026() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test026");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj3 = arrayListTestDriver0.remove((int) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+    }
+
+    @Test
+    public void test027() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test027");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean1 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj4 = arrayListTestDriver0.remove((int) '#');
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean1 + "' != '" + true + "'", boolean1 == true);
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+    }
+
+    @Test
+    public void test028() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test028");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean2 = arrayListTestDriver0.equals_CUT((java.lang.Object) 0.0f);
+        boolean boolean4 = arrayListTestDriver0.add((java.lang.Object) 0L);
+        experiment.util.ArrayListTestDriver arrayListTestDriver5 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver5.clear();
+        boolean boolean7 = arrayListTestDriver0.equals_CUT((java.lang.Object) arrayListTestDriver5);
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj9 = arrayListTestDriver5.remove((int) 'a');
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + true + "'", boolean4 == true);
+        org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + false + "'", boolean7 == false);
+    }
+
+    @Test
+    public void test029() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test029");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        arrayListTestDriver0.clear();
+        int int4 = arrayListTestDriver0.size();
+        boolean boolean6 = arrayListTestDriver0.equals_CUT((java.lang.Object) 1.0f);
+        boolean boolean8 = arrayListTestDriver0.contains((java.lang.Object) 1);
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj10 = arrayListTestDriver0.get((int) (byte) -1);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index -1; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + int4 + "' != '" + 0 + "'", int4 == 0);
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + false + "'", boolean6 == false);
+        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + false + "'", boolean8 == false);
+    }
+
+    @Test
+    public void test030() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test030");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        arrayListTestDriver0.clear();
+        int int4 = arrayListTestDriver0.size();
+        // The following exception was thrown during execution in test generation
+        try {
+            experiment.util.ListIterator listIterator6 = arrayListTestDriver0.listIterator((int) (byte) 1);
+            org.junit.Assert.fail("Expected exception of type java.lang.IndexOutOfBoundsException; message: null");
+        } catch (java.lang.IndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + int4 + "' != '" + 0 + "'", int4 == 0);
+    }
+
+    @Test
+    public void test031() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test031");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        boolean boolean1 = arrayListTestDriver0.isEmpty();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        java.lang.Object[] objArray3 = arrayListTestDriver0.toArray();
+        experiment.util.ArrayListTestDriver arrayListTestDriver4 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver4.clear();
+        java.lang.Object[] objArray6 = arrayListTestDriver4.toArray();
+        boolean boolean7 = arrayListTestDriver4.isEmpty();
+        java.lang.Object[] objArray8 = arrayListTestDriver4.toArray();
+        boolean boolean10 = arrayListTestDriver4.add((java.lang.Object) ' ');
+        arrayListTestDriver4.clear();
+        arrayListTestDriver4.clear();
+        boolean boolean13 = arrayListTestDriver0.remove((java.lang.Object) arrayListTestDriver4);
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj15 = arrayListTestDriver4.get((int) ' ');
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 32; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertTrue("'" + boolean1 + "' != '" + true + "'", boolean1 == true);
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertNotNull(objArray3);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray3), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray3), "[]");
+        org.junit.Assert.assertNotNull(objArray6);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray6), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray6), "[]");
+        org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + true + "'", boolean7 == true);
+        org.junit.Assert.assertNotNull(objArray8);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray8), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray8), "[]");
+        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + true + "'", boolean10 == true);
+        org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + false + "'", boolean13 == false);
+    }
+
+    @Test
+    public void test032() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression_ArrayListTest_1264048269_1024_0.test032");
+        experiment.util.ArrayListTestDriver arrayListTestDriver0 = new experiment.util.ArrayListTestDriver();
+        arrayListTestDriver0.clear();
+        java.lang.Object[] objArray2 = arrayListTestDriver0.toArray();
+        arrayListTestDriver0.clear();
+        boolean boolean4 = arrayListTestDriver0.isEmpty();
+        experiment.util.Iterator iterator5 = arrayListTestDriver0.iterator();
+        experiment.util.ArrayListTestDriver arrayListTestDriver7 = new experiment.util.ArrayListTestDriver();
+        boolean boolean8 = arrayListTestDriver7.isEmpty();
+        boolean boolean10 = arrayListTestDriver7.add((java.lang.Object) 0.0f);
+        int int11 = arrayListTestDriver7.size();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.Object obj12 = arrayListTestDriver0.set((int) (short) 1, (java.lang.Object) int11);
+            org.junit.Assert.fail("Expected exception of type java.lang.ArrayIndexOutOfBoundsException; message: Index 1; size 0");
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+        // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(objArray2);
+        org.junit.Assert.assertEquals(java.util.Arrays.deepToString(objArray2), "[]");
+        org.junit.Assert.assertEquals(java.util.Arrays.toString(objArray2), "[]");
+        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + true + "'", boolean4 == true);
+        org.junit.Assert.assertNotNull(iterator5);
+        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + true + "'", boolean8 == true);
+        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + true + "'", boolean10 == true);
+        org.junit.Assert.assertTrue("'" + int11 + "' != '" + 1 + "'", int11 == 1);
+    }
+
+}

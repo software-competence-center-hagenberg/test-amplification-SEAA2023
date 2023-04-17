@@ -1,0 +1,24 @@
+// Note: code added via randoop --junit-after-each option (has to be java 8 compatible)
+Class<?> testClass = this.getClass();
+
+String testClassName = testClass.getName();
+String testPackageName = testClass.getPackage().getName();
+
+int startIndex = testClassName.indexOf("_") + 1;
+int endIndex = testClassName.indexOf("Test");
+String sutClassName = testClassName.substring(startIndex, endIndex);
+
+startIndex = 0;
+endIndex = testPackageName.indexOf(".test");
+String testDriverPackageName = testPackageName.substring(startIndex, endIndex);
+
+String testDriverClassName = testDriverPackageName + "." + sutClassName + "TestDriver";
+try {
+    Class<?> clazz = Class.forName(testDriverClassName);
+    java.lang.reflect.Method method = clazz.getMethod("matchInternalStateSnapshot");
+    boolean result = ((Boolean) method.invoke(null)).booleanValue();
+    org.junit.Assert.assertTrue(result);
+} catch (IllegalAccessException | IllegalArgumentException | java.lang.reflect.InvocationTargetException | ClassNotFoundException | NoSuchMethodException | SecurityException e) {
+    e.printStackTrace();
+    org.junit.Assert.fail(e.getMessage());
+}

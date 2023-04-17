@@ -1,0 +1,7 @@
+experiment.util.Stack,,size peek isEmpty
+experiment.util.ArrayList,,size iterator isEmpty toArray
+experiment.util.HashSet,,size iterator isEmpty toArray
+experiment.util.LinkedList,,size iterator getFirst getLast isEmpty toArray
+experiment.util.TreeSet,,size last first isEmpty toArray
+experiment.util.HashMap,,size isEmpty values entrySet keySet
+experiment.util.TreeMap,,size isEmpty values entrySet keySet

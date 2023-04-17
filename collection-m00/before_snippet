@@ -1,0 +1,2 @@
+// Note: code added via randoop --junit-before-each option (has to be java 8 compatible)
+System.setProperty("testId", java.time.Instant.now().toEpochMilli()+"#"+java.util.UUID.randomUUID().toString());
